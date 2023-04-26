@@ -1,8 +1,10 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
 
 function App() {
   const fullscreen = useRef<HTMLDivElement | null>(null);
+
+  const [isFullscreen, setIsFullscreen] = useState(false);
   // useEffect(() => {
   //   // Check if the browser supports the Fullscreen API
   //   (async () => {
@@ -11,13 +13,20 @@ function App() {
   // }, []);
   return (
     <div className="App" ref={fullscreen}>
-      <button
-        onClick={async (e) => {
-          await fullscreen.current?.requestFullscreen();
-        }}
-      >
-        click
-      </button>
+      <h1>LIJEPA PRICA</h1>
+      {/* {isFullscreen ? (
+        <div></div>
+      ) : (
+        <button
+          onClick={async (e) => {
+            setIsFullscreen(true);
+            await fullscreen.current?.requestFullscreen();
+          }}
+        >
+          click
+        </button> 
+      )}
+*/}
     </div>
   );
 }
